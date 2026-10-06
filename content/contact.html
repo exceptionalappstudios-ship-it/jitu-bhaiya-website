@@ -1,0 +1,62 @@
+<!--
+title: Contact — Jitendra Khimlani
+description: Register for a program, book a coaching session or invite Jitendra Khimlani to speak at your university, company or institution.
+out: contact.html
+nav: contact
+-->
+<section class="page-hero">
+  <div class="hero-media"><img src="{{img:journal}}" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal">Contact</span>
+    <h1 class="reveal d1">Let's begin your <em class="gold-text">journey.</em></h1>
+    <p class="lead reveal d2">Programs, private sessions, speaking invitations or seva partnerships — we'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div class="split" style="align-items:start">
+      <div>
+        <span class="eyebrow reveal">Reach out</span>
+        <h2 class="reveal d1">We reply <em>personally.</em></h2>
+        <p class="reveal d2" style="color:var(--sand)">The quickest way to reach the team is WhatsApp. Fill the form and your message opens in WhatsApp, ready to send.</p>
+        <ul class="contact-info reveal d3">
+          <li><strong>Call / WhatsApp</strong><a href="tel:{{phone}}">{{phone_display}}</a></li>
+          <li><strong>Program registrations</strong><a href="tel:{{registration}}">{{registration}}</a></li>
+          <li><strong>Visit</strong><span>{{address}}</span></li>
+        </ul>
+      </div>
+      <form class="reveal d1" data-whatsapp="{{whatsapp}}">
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="Name" required autocomplete="name"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+          <div class="field full"><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email"></div>
+          <div class="field full">
+            <label for="f-program">I'm interested in</label>
+            <select id="f-program" name="Interested in">
+              <option>Happiness Program</option>
+              <option>Sahaj Samadhi Meditation</option>
+              <option>Youth Empowerment</option>
+              <option>Corporate Workshop</option>
+              <option>NLP Coaching</option>
+              <option>Intuition Process</option>
+              <option>Bach Flower Therapy</option>
+              <option>Speaking Invitation</option>
+              <option>Seva Partnership</option>
+              <option>Volunteer</option>
+            </select>
+          </div>
+          <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="Message" placeholder="Tell us a little about yourself or your event"></textarea></div>
+        </div>
+        <button class="btn btn-gold" type="submit" style="margin-top:34px">Send via WhatsApp <span class="arrow">→</span></button>
+        <p class="form-note">Your details go straight to Jitu Bhaiya's team on WhatsApp — nothing is stored on this website.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm bg-ink-2">
+  <div class="wrap">
+    <iframe title="Map — Alkapuri, Vadodara" src="https://www.google.com/maps?q=Nutan+Bharat+Society,+Alkapuri,+Vadodara&output=embed" style="width:100%;height:420px;border:0;filter:grayscale(1) invert(0.92) contrast(0.9)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
