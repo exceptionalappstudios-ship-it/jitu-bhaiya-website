@@ -102,6 +102,23 @@
     restart();
   }
 
+  // YouTube facades: load the player only when clicked
+  document.querySelectorAll(".video[data-yt]").forEach(function (v) {
+    function play() {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + v.getAttribute("data-yt") + "?autoplay=1&rel=0";
+      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.allowFullscreen = true;
+      f.title = v.getAttribute("aria-label") || "Video";
+      v.innerHTML = "";
+      v.appendChild(f);
+    }
+    v.addEventListener("click", play);
+    v.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); }
+    });
+  });
+
   // Blog filters
   var filterBtns = document.querySelectorAll(".filters button");
   filterBtns.forEach(function (btn) {

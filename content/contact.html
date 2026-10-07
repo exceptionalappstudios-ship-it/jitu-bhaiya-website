@@ -1,15 +1,15 @@
 <!--
 title: Contact — Jitendra Khimlani
-description: Register for a program, book a coaching session or invite Jitendra Khimlani to speak at your university, company or institution.
+description: Register for an Art of Living program, book a personal session or invite Jitendra Khimlani to speak at your school, university, company or institution.
 out: contact.html
 nav: contact
 -->
 <section class="page-hero">
-  <div class="hero-media"><img src="{{img:journal}}" alt="" fetchpriority="high"></div>
+  <div class="hero-media"><img src="{{img:real/jitu-stage-colors}}" alt="" fetchpriority="high" style="object-position:right 30%"></div>
   <div class="wrap">
-    <span class="eyebrow reveal">Contact</span>
+    <span class="eyebrow reveal">Let's connect</span>
     <h1 class="reveal d1">Let's begin your <em class="gold-text">journey.</em></h1>
-    <p class="lead reveal d2">Programs, private sessions, speaking invitations or seva partnerships — we'd love to hear from you.</p>
+    <p class="lead reveal d2">Programs, personal sessions, seminar invitations or seva partnerships — we'd love to hear from you.</p>
   </div>
 </section>
 
@@ -19,31 +19,35 @@ nav: contact
       <div>
         <span class="eyebrow reveal">Reach out</span>
         <h2 class="reveal d1">We reply <em>personally.</em></h2>
-        <p class="reveal d2" style="color:var(--sand)">The quickest way to reach the team is WhatsApp. Fill the form and your message opens in WhatsApp, ready to send.</p>
+        <p class="reveal d2" style="color:var(--sand)">The quickest way to reach the team is WhatsApp. Fill in the form and your message opens in WhatsApp, ready to send.</p>
         <ul class="contact-info reveal d3">
-          <li><strong>Call / WhatsApp</strong><a href="tel:{{phone}}">{{phone_display}}</a></li>
-          <li><strong>Program registrations</strong><a href="tel:{{registration}}">{{registration}}</a></li>
-          <li><strong>Visit</strong><span>{{address}}</span></li>
+          <li><strong>WhatsApp &amp; registrations</strong><a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">{{phone_display}}</a></li>
+          <li><strong>Helpline</strong><a href="tel:{{helpline}}">{{helpline_display}}</a></li>
+          <li><strong>Instagram</strong><a href="{{instagram}}" target="_blank" rel="noopener">@jitubhaiyajgd</a></li>
+          <li><strong>Based in</strong><span>Vadodara, Gujarat</span></li>
         </ul>
       </div>
       <form class="reveal d1" data-whatsapp="{{whatsapp}}">
         <div class="form-grid">
           <div class="field"><label for="f-name">Full name</label><input id="f-name" name="Name" required autocomplete="name"></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel"></div>
           <div class="field full"><label for="f-email">Email</label><input id="f-email" name="Email" type="email" autocomplete="email"></div>
           <div class="field full">
             <label for="f-program">I'm interested in</label>
             <select id="f-program" name="Interested in">
               <option>Happiness Program</option>
+              <option>Online Meditation &amp; Breath Workshop</option>
               <option>Sahaj Samadhi Meditation</option>
-              <option>Youth Empowerment</option>
-              <option>Corporate Workshop</option>
-              <option>NLP Coaching</option>
-              <option>Intuition Process</option>
-              <option>Bach Flower Therapy</option>
-              <option>Speaking Invitation</option>
-              <option>Seva Partnership</option>
-              <option>Volunteer</option>
+              <option>Youth Happiness Program</option>
+              <option>Intuition Process (ages 5–18)</option>
+              <option>Utkarsha Yoga (ages 8–13)</option>
+              <option>Medha Yoga (ages 13–18)</option>
+              <option>Corporate Program</option>
+              <option>Stress Free Teaching Workshop</option>
+              <option>Volunteer Training Program</option>
+              <option>Personal session / Bach Flower Therapy</option>
+              <option>Seminar or speaking invitation</option>
+              <option>Seva / volunteering</option>
             </select>
           </div>
           <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="Message" placeholder="Tell us a little about yourself or your event"></textarea></div>
@@ -56,7 +60,14 @@ nav: contact
 </section>
 
 <section class="section-sm bg-ink-2">
-  <div class="wrap">
-    <iframe title="Map — Alkapuri, Vadodara" src="https://www.google.com/maps?q=Nutan+Bharat+Society,+Alkapuri,+Vadodara&output=embed" style="width:100%;height:420px;border:0;filter:grayscale(1) invert(0.92) contrast(0.9)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="wrap center">
+    <span class="eyebrow reveal">Let's keep in touch</span>
+    <h2 class="reveal d1">Follow <em>@jitubhaiyajgd</em></h2>
+    <div class="socials reveal d2" style="justify-content:center">
+      <a href="{{instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="{{facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.2c0-.8.2-1.2 1.4-1.2H17V2h-2.6C11.3 2 10 3.5 10 6v2H8v3h2v11h4V11h2.7l.3-3h-3z"/></svg></a>
+      <a href="{{x}}" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a>
+      <a href="{{linkedin}}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21H9z"/></svg></a>
+    </div>
   </div>
 </section>

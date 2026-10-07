@@ -4,26 +4,29 @@ A luxury redesign of [jitendrakhimlani.com](https://jitendrakhimlani.com/): blac
 
 It's a plain static site (HTML/CSS/JS), so it can be hosted for free on GitHub Pages, Netlify, Vercel or Cloudflare Pages, or uploaded to any web host. It doesn't need WordPress or a database.
 
-## Pages
+## Content
 
-| Page | File |
-|---|---|
-| Home | `index.html` |
-| About | `about.html` |
-| Programs (Happiness Program, Sahaj Samadhi, Youth, Corporate, NLP, Intuition, Bach Flower) | `programs.html` |
-| Seva & Impact (#SevaTrend, Khushiyon Ka Tohfa, Colors of Life, food kits) | `seva.html` |
-| Journal (blog listing with category filters) | `blog.html` |
-| Articles (7 posts) | `blog/*.html` |
-| Contact (the form sends the message via WhatsApp) | `contact.html` |
+The text, numbers, testimonials, photos, programs, prices, press links and seva stories all come from the current WordPress site. The only additions are the atmospheric images (stage, marble, still lifes) generated with Higgsfield.
+
+| Page | File | What's on it |
+|---|---|---|
+| Home | `index.html` | Bio, real stats (200K+ / 100+ / 247+ / 500+), programs, "Acknowledged by" photo strip, client logos, real testimonials, Mitra Gadhvi video, seva highlights, press logos |
+| About | `about.html` | Story, expertise, Colors of Life, timeline, full press list |
+| Programs | `programs.html` | Happiness Program (with FAQs and videos), Online Workshop, Sahaj Samadhi, Youth Happiness, Intuition Process (with age tiers and prices), Utkarsha & Medha Yoga, Corporate, Stress Free Teaching, Volunteer Training, personal sessions |
+| Seva | `seva.html` | #SevaTrend, Khushiyo Ka Tohfa, shoes, chhas, Share It Dil Se, floods and more |
+| Journal | `blog.html` + `blog/*.html` | 10 seva stories from the old site, plus 6 "Wisdom" articles |
+| Contact | `contact.html` | The form opens WhatsApp (+91 97246 23424) with the message already filled in |
+
+Every "Inquire / Register" button opens WhatsApp with a message already filled in, the same way the old site's buttons did.
 
 ## Editing
 
 The top-level `.html` files are **generated**. Edit these sources instead:
 
-- `content/*.html`: page content
-- `build.py`: the shared header, footer and `<head>`, plus phone, WhatsApp, address, social links and image list
+- `content/*.html`: page content (`{{img:real/name}}` inserts an image, `{{wa:message}}` inserts a WhatsApp link)
+- `build.py`: the shared header, footer and `<head>`, plus phone numbers and social links
 - `assets/css/style.css`: all styling
-- `assets/js/main.js`: menu, animations, counters, testimonial slider, forms
+- `assets/js/main.js`: menu, animations, counters, testimonial slider, videos, forms
 
 Then rebuild:
 
@@ -31,21 +34,18 @@ Then rebuild:
 python3 build.py
 ```
 
+The build stops with an error if a page references an image that doesn't exist.
+
 ## Images
 
-The images were generated with Higgsfield and load from the Higgsfield CDN. To keep local copies before going live (recommended):
-
-```bash
-./download-images.sh
-```
-
-This saves them to `assets/img/` and rebuilds the pages to use the local files. Converting them to `.webp` makes the pages faster (`build.py` picks up `.webp`/`.jpg` versions automatically).
+- `assets/img/real/`: photos from the current site, resized and compressed
+- `assets/img/logos/`: client, press and media logos
+- `assets/img/*.jpg`: Higgsfield-generated backgrounds
 
 ## Before going live: checklist
 
-- [ ] **Portrait photo**: add a real photo of Jitu Bhaiya as `assets/img/jitendra-portrait.jpg` (portrait, about 4:5). Until then a gold "JK" monogram is shown.
-- [ ] **Testimonials** on the home page are *samples*. Replace them with real quotes from participants (search for `Sample testimonials` in `content/index.html`).
-- [ ] **Contact details** in `build.py` came from public directory listings. Please confirm the phone, WhatsApp and registration numbers and the address.
-- [ ] Program details (durations, age groups) are typical Art of Living formats. Adjust them as needed.
-- [ ] Hook the newsletter form up to an email provider (Mailchimp, ConvertKit, etc.).
-- [ ] Copy over any older blog posts from WordPress (new posts go in `content/blog/`).
+- [ ] The 6 **"Wisdom" articles** (Sudarshan Kriya, Sahaj Samadhi, 5 Daily Rituals, What We Give, Bach Flower, NLP) are **new drafts written for this redesign**, not from the old site. Jitu Bhaiya should read and approve them, or they should be removed.
+- [ ] Confirm the second helpline number (+91 99985 69377). It comes from the September 2026 Happiness Program poster.
+- [ ] The "Join an upcoming course" sections point to WhatsApp because the 10–13 September 2026 batch has already passed. Add the next dates when they're known.
+- [ ] The "Personal sessions" section (Bach flower therapy, aromatherapy, NLP coaching) is written from his bio and testimonials. Check the wording.
+- [ ] The photos in "Acknowledged by renowned personalities" use generic alt text. Add the guests' names if you'd like them shown.
