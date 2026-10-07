@@ -21,6 +21,8 @@ CONTENT = ROOT / "content"
 
 SITE = {
     "name": "Jitendra Khimlani",
+    # Public address of the site, used for canonical URLs, social previews and the sitemap
+    "url": "https://jitendrakhimlani.com",
     # WhatsApp / registration number used across jitendrakhimlani.com
     "phone_display": "+91 97246 23424",
     "phone": "+919724623424",
@@ -70,27 +72,130 @@ ICONS = {
 }
 
 
-def head(title, description, depth):
+DEFAULT_OG_IMAGE = "og/og-default.jpg"
+SAME_AS = ["instagram", "facebook", "x", "linkedin"]
+
+
+def page_url(out):
+    path = "" if out == "index.html" else out
+    return SITE["url"].rstrip("/") + "/" + path
+
+
+def seo_title(title):
+    """Keep titles near Google's ~60-character display limit by dropping the name suffix on long ones."""
+    suffix = " — Jitendra Khimlani"
+    if len(title) > 65 and title.endswith(suffix):
+        return title[: -len(suffix)]
+    return title
+
+
+def person_schema():
+    return {
+        "@type": "Person",
+        "@id": SITE["url"] + "/#person",
+        "name": "Jitendra Khimlani",
+        "alternateName": "Jitu Bhaiya",
+        "url": SITE["url"] + "/",
+        "image": SITE["url"] + "/assets/img/real/jitu-with-gurudev.jpg",
+        "jobTitle": ["Senior Art of Living Faculty", "Motivational Speaker", "NLP Trainer",
+                     "Bach Remedy Therapist", "Intuition Trainer", "Life Transformation Coach"],
+        "description": "Senior Art of Living faculty, motivational speaker, NLP trainer, Bach remedy therapist and life transformation coach from Vadodara whose workshops have reached over 2,00,000 people.",
+        "address": {"@type": "PostalAddress", "addressLocality": "Vadodara", "addressRegion": "Gujarat", "addressCountry": "IN"},
+        "telephone": SITE["phone"],
+        "knowsAbout": ["Sudarshan Kriya", "Meditation", "Happiness Program", "NLP", "Bach flower therapy",
+                       "Intuition Process", "Stress management", "Life coaching"],
+        "sameAs": [SITE[k] for k in SAME_AS],
+    }
+
+
+def json_ld(meta, out, title, description, image, body):
+    import json
+    url = page_url(out)
+    graph = []
+    if out == "index.html":
+        graph.append(person_schema())
+        graph.append({"@type": "WebSite", "@id": SITE["url"] + "/#website", "url": SITE["url"] + "/",
+                      "name": "Jitendra Khimlani", "inLanguage": "en-IN", "publisher": {"@id": SITE["url"] + "/#person"}})
+    else:
+        crumbs = [("Home", SITE["url"] + "/")]
+        if out.startswith("blog/"):
+            crumbs.append(("Journal", page_url("blog.html")))
+        crumbs.append((meta.get("crumb") or re.sub(r"\s+—.*$", "", title), url))
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(crumbs)]})
+    if out.startswith("blog/"):
+        graph.append({"@type": "BlogPosting", "headline": re.sub(r"\s+—.*$", "", title), "description": description,
+                      "image": image, "url": url, "mainEntityOfPage": url, "inLanguage": "en-IN",
+                      "author": {"@type": "Person", "name": "Jitendra Khimlani", "url": SITE["url"] + "/"},
+                      "publisher": {"@type": "Person", "name": "Jitendra Khimlani", "url": SITE["url"] + "/"}})
+    faqs = re.findall(r"<details>\s*<summary>(.*?)</summary>\s*<p>(.*?)</p>", body, re.S)
+    if faqs:
+        clean = lambda t: re.sub(r"<[^>]+>", "", t).strip()
+        graph.append({"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": clean(q), "acceptedAnswer": {"@type": "Answer", "text": clean(a)}} for q, a in faqs]})
+    if out == "about.html":
+        graph.append(dict(person_schema(), **{"@type": "Person"}))
+    data = {"@context": "https://schema.org", "@graph": graph}
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
+
+
+def head(meta, out, depth, body):
     base = "../" * depth
+    title = seo_title(meta["title"])
+    description = meta["description"]
+    url = page_url(out)
+    img = meta.get("image")
+    if not img:
+        m = re.search(r'class="article-cover[^"]*"><img src="(?:\.\./)*assets/img/([^"]+)"', body)
+        img = m.group(1) if m else DEFAULT_OG_IMAGE
+    image = SITE["url"] + "/assets/img/" + img
+    og_type = "article" if out.startswith("blog/") else "website"
+    robots = meta.get("robots", "index, follow, max-image-preview:large")
     return f"""<!doctype html>
-<html lang="en" class="no-js">
+<html lang="en-IN" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
+<meta name="robots" content="{robots}">
+<meta name="author" content="Jitendra Khimlani">
+<link rel="canonical" href="{url}">
 <meta name="theme-color" content="#0b0a08">
+<meta property="og:site_name" content="Jitendra Khimlani">
+<meta property="og:locale" content="en_IN">
+<meta property="og:type" content="{og_type}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
-<meta property="og:type" content="website">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{image}">
+<meta property="og:image:alt" content="{meta.get('image_alt', 'Jitendra Khimlani (Jitu Bhaiya)')}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@jitubhaiyajgd">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{description}">
+<meta name="twitter:image" content="{image}">
 <link rel="icon" href="{base}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{base}assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/css/style.css">
+{json_ld(meta, out, meta["title"], description, image, body)}
 </head>
 <body>
 """
+
+
+def write_sitemap(outs):
+    import datetime
+    today = datetime.date.today().isoformat()
+    def prio(o):
+        return "1.0" if o == "index.html" else ("0.6" if o.startswith("blog/") else "0.8")
+    urls = "\n".join(f"  <url><loc>{page_url(o)}</loc><lastmod>{today}</lastmod><priority>{prio(o)}</priority></url>" for o in sorted(outs))
+    (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n', encoding="utf-8")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE['url'].rstrip('/')}/sitemap.xml\n", encoding="utf-8")
+    print("built sitemap.xml, robots.txt")
 
 
 def header(active, depth):
@@ -189,6 +294,7 @@ def parse(path):
 
 
 def main():
+    outs = []
     for path in sorted(CONTENT.rglob("*.html")):
         meta, body = parse(path)
         out = meta["out"]
@@ -202,11 +308,13 @@ def main():
         leftover = re.findall(r"\{\{[^}]+\}\}", body)
         if leftover:
             raise SystemExit(f"{path}: unknown placeholders {leftover}")
-        html = head(meta["title"], meta["description"], depth) + header(meta.get("nav", ""), depth) + "<main>\n" + body + "</main>\n" + footer(depth)
+        html = head(meta, out, depth, body) + header(meta.get("nav", ""), depth) + "<main>\n" + body + "</main>\n" + footer(depth)
         dest = ROOT / out
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html, encoding="utf-8")
+        outs.append(out)
         print("built", out)
+    write_sitemap(outs)
 
 
 if __name__ == "__main__":

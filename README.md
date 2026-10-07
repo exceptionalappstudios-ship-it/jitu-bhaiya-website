@@ -47,6 +47,19 @@ The build stops with an error if a page references an image that doesn't exist.
 - `assets/video/hero-smiles.webm` / `.mp4`: slide 1, the flower-greeting photo animated with Higgsfield and trimmed to start at 2s (plays once, holds the last frame)
 - `assets/img/real/ack-*.jpg`: celebrity photos, upscaled to 2K with Higgsfield (ack-07 stayed at its original size because the upscale failed twice)
 
+## SEO
+
+`build.py` generates the SEO layer for every page automatically:
+
+- `<title>`, meta description, robots, author and a canonical URL
+- Open Graph and Twitter card tags (share image = front-matter `image`, else the article cover, else `assets/img/og/og-default.jpg`)
+- JSON-LD structured data: `Person` + `WebSite` (home), `BreadcrumbList` (inner pages), `BlogPosting` (journal posts) and `FAQPage` (any `<details>` FAQ)
+- `sitemap.xml` and `robots.txt`
+- one `<h1>` per page, with a keyword line (`.h1-kicker`) such as "Life Transformation Coach, Vadodara" inside it
+
+Each content file's front-matter controls its `title`, `description`, `image` and breadcrumb `crumb`. Keep titles under ~60 characters and descriptions around 140–160.
+The live domain is set in `SITE["url"]` (currently `https://jitendrakhimlani.com`); change it there if the site launches elsewhere.
+
 ## Before going live: checklist
 
 - [ ] **AI-generated scenes of Jitu Bhaiya** (the slide 1 flower animation, hero slides 6–7, the About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
@@ -56,3 +69,4 @@ The build stops with an error if a page references an image that doesn't exist.
 - [ ] The "Personal sessions" section (Bach flower therapy, aromatherapy, NLP coaching) is written from his bio and testimonials. Check the wording.
 - [ ] Replace the Google reviews link (`google_reviews` in `build.py`) with the exact link to his Google Business Profile reviews. It currently opens a Google Maps search for his business name.
 - [ ] The photos in "Acknowledged by renowned personalities" use generic alt text. Add the guests' names if you'd like them shown.
+- After launch: verify the domain in Google Search Console and submit `sitemap.xml`; keep the Google Business Profile linked to the site.

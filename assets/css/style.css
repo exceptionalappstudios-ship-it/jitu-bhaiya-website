@@ -1554,3 +1554,7 @@ a.video:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 @media (max-width: 640px) {
   .brand-mark { width: 30px; height: 30px; font-size: 0.8rem; }
 }
+
+/* SEO: keyword line inside each H1, styled like the eyebrow it replaces */
+h1 .h1-kicker { display: flex; width: fit-content; margin-bottom: 1.6rem; line-height: 1.4; }
+.center-slide h1 .h1-kicker { margin-left: auto; margin-right: auto; }
