@@ -6,11 +6,11 @@ It's a plain static site (HTML/CSS/JS), so it can be hosted for free on GitHub P
 
 ## Content
 
-The text, numbers, testimonials, photos, programs, prices, press links and seva stories all come from the current WordPress site. The additions are images generated with Higgsfield: background images, plus hero scenes and a short hero video of Jitu Bhaiya made from his real photos. His celebrity photos were also upscaled with Higgsfield.
+The text, numbers, testimonials, photos, programs, prices, press links and seva stories all come from the current WordPress site. The additions are images generated with Higgsfield: background images, plus hero scenes of Jitu Bhaiya made from his real photos and an animated version of his flower-greeting photo. His celebrity photos were also upscaled with Higgsfield.
 
 | Page | File | What's on it |
 |---|---|---|
-| Home | `index.html` | 7-slide hero, each with its own headline and buttons: the 4 slides from the old site recreated (Spreading smiles, 200 thousand lives, Intuition highlight, Transform your mind) plus 3 generated scenes (stage video, meditation, seva); bio, stats, "Which program is right for you?" finder (12 programs with benefits, filterable by audience), celebrity gallery, signature talks, client logos, reviews wall + Mitra Gadhvi video, Intuition success stories, seva, press |
+| Home | `index.html` | 7-slide hero, each with its own headline and buttons: the 4 slides from the old site recreated (Spreading smiles, 200 thousand lives, Intuition highlight, Transform your mind) plus a real stage photo and 2 generated scenes (meditation, seva); bio, stats, "Which program is right for you?" finder (12 programs with benefits, filterable by audience), celebrity gallery, signature talks, client logos, reviews wall + Mitra Gadhvi video, Intuition success stories, seva, press |
 | About | `about.html` | Story, expertise, Colors of Life, timeline, full press list |
 | Programs | `programs.html` | Happiness Program (with FAQs and videos), Online Workshop, Sahaj Samadhi, Youth Happiness, Intuition Process (with age tiers and prices), Utkarsha & Medha Yoga, Corporate, Stress Free Teaching, Volunteer Training, personal sessions |
 | Gallery | `gallery.html` | Upscaled photos with renowned personalities, programs and seva, with a full-screen viewer |
@@ -45,12 +45,11 @@ The build stops with an error if a page references an image that doesn't exist.
 - `assets/img/hero/slide-*.jpg`: the old site's slider photos, cropped to remove their baked-in text; `collage-200.jpg` fills the big "200"
 - `assets/img/hero/hero-*.jpg`: Higgsfield-generated hero scenes of Jitu Bhaiya, made from his real photos as reference
 - `assets/video/hero-smiles.webm` / `.mp4`: slide 1, the flower-greeting photo animated with Higgsfield and trimmed to start at 2s (plays once, holds the last frame)
-- `assets/video/hero-stage.webm` / `.mp4`: slide 5, the 8-second stage video (WebM for every browser, H.264 MP4 as a fallback)
 - `assets/img/real/ack-*.jpg`: celebrity photos, upscaled to 2K with Higgsfield (ack-07 stayed at its original size because the upscale failed twice)
 
 ## Before going live: checklist
 
-- [ ] **AI-generated scenes of Jitu Bhaiya** (the slide 1 flower animation, hero slides 5–7, the stage video, the About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
+- [ ] **AI-generated scenes of Jitu Bhaiya** (the slide 1 flower animation, hero slides 6–7, the About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
 - [ ] The 6 **"Wisdom" articles** (Sudarshan Kriya, Sahaj Samadhi, 5 Daily Rituals, What We Give, Bach Flower, NLP) are **new drafts written for this redesign**, not from the old site. Jitu Bhaiya should read and approve them, or they should be removed.
 - [ ] Confirm the second helpline number (+91 99985 69377). It comes from the September 2026 Happiness Program poster.
 - [ ] The "Join an upcoming course" sections point to WhatsApp because the 10–13 September 2026 batch has already passed. Add the next dates when they're known.
