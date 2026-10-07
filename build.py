@@ -32,6 +32,9 @@ SITE = {
     "facebook": "https://www.facebook.com/jitubhaiyajgd",
     "x": "https://x.com/jitubhaiyajgd",
     "linkedin": "https://www.linkedin.com/in/jitendra-khimlani-8682a3185/",
+    # Google Business Profile. Replace with the exact reviews link from his
+    # Google Business dashboard (e.g. a https://g.page/r/.../review or maps link) when available.
+    "google_reviews": "https://www.google.com/maps/search/?api=1&query=Jitendra+Khimlani+Psychological+Counselling+Therapist+and+NLP+Trainer+Vadodara",
 }
 
 

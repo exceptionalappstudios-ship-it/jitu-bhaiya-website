@@ -54,4 +54,5 @@ The build stops with an error if a page references an image that doesn't exist.
 - [ ] Confirm the second helpline number (+91 99985 69377). It comes from the September 2026 Happiness Program poster.
 - [ ] The "Join an upcoming course" sections point to WhatsApp because the 10–13 September 2026 batch has already passed. Add the next dates when they're known.
 - [ ] The "Personal sessions" section (Bach flower therapy, aromatherapy, NLP coaching) is written from his bio and testimonials. Check the wording.
+- [ ] Replace the Google reviews link (`google_reviews` in `build.py`) with the exact link to his Google Business Profile reviews. It currently opens a Google Maps search for his business name.
 - [ ] The photos in "Acknowledged by renowned personalities" use generic alt text. Add the guests' names if you'd like them shown.
