@@ -1535,3 +1535,6 @@ cite {
   .slide-smiles img, .slide-smiles video { object-position: 42% 20%; }
   .center-slide .slide-copy .eyebrow { display: none; }
 }
+
+.field[hidden] { display: none; }
+.field input[type="date"] { color-scheme: dark; }

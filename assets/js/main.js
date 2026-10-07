@@ -263,6 +263,20 @@
     });
   }
 
+  // Contact form: show date/time fields only for personal appointments
+  if (programSelect) {
+    var apptFields = document.querySelectorAll(".appt-field");
+    var syncAppt = function () {
+      var isAppt = /appointment/i.test(programSelect.value);
+      apptFields.forEach(function (f) {
+        f.hidden = !isAppt;
+        if (!isAppt) f.querySelectorAll("input, select").forEach(function (el) { el.value = ""; });
+      });
+    };
+    programSelect.addEventListener("change", syncAppt);
+    syncAppt();
+  }
+
   // Newsletter (placeholder until connected to an email provider)
   document.querySelectorAll(".newsletter").forEach(function (form) {
     form.addEventListener("submit", function (e) {
