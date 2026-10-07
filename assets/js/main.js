@@ -102,9 +102,14 @@
     restart();
   }
 
-  // YouTube facades: load the player only when clicked
+  // YouTube: each video is a real link to YouTube. On the normal site we play it
+  // inline instead; inside a frame (e.g. a preview) the link opens YouTube in a new tab.
+  var framed = false;
+  try { framed = window.self !== window.top; } catch (e) { framed = true; }
   document.querySelectorAll(".video[data-yt]").forEach(function (v) {
-    function play() {
+    v.addEventListener("click", function (e) {
+      if (framed) return;
+      e.preventDefault();
       var f = document.createElement("iframe");
       f.src = "https://www.youtube-nocookie.com/embed/" + v.getAttribute("data-yt") + "?autoplay=1&rel=0";
       f.allow = "autoplay; encrypted-media; picture-in-picture";
@@ -112,10 +117,6 @@
       f.title = v.getAttribute("aria-label") || "Video";
       v.innerHTML = "";
       v.appendChild(f);
-    }
-    v.addEventListener("click", play);
-    v.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); }
     });
   });
 
