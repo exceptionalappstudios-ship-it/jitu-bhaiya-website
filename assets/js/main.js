@@ -1,6 +1,16 @@
 (function () {
   document.documentElement.classList.remove("no-js");
 
+  // Open each new page at the top (some embedded previews keep the old scroll
+  // position); back/forward still returns to where the visitor was.
+  var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+  if (!location.hash && !(nav && nav.type === "back_forward")) {
+    window.scrollTo(0, 0);
+    if (window.self !== window.top) {
+      try { document.documentElement.scrollIntoView({ block: "start" }); } catch (e) {}
+    }
+  }
+
   // Header state on scroll
   var header = document.querySelector(".site-header");
   function onScroll() {

@@ -1558,3 +1558,27 @@ a.video:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 /* SEO: keyword line inside each H1, styled like the eyebrow it replaces */
 h1 .h1-kicker { display: flex; width: fit-content; margin-bottom: 1.6rem; line-height: 1.4; }
 .center-slide h1 .h1-kicker { margin-left: auto; margin-right: auto; }
+
+/* Phones: wide photos sit in a frame under the header so the whole scene
+   (e.g. the people clapping) stays visible; gentler zoom on every slide */
+@media (max-width: 640px) {
+  .hero-slide img, .hero-slide video { transform: none; }
+  .hero-slide.active img { animation: kenburns-soft 9s linear forwards; }
+  .hero-slide:nth-child(even).active img { animation-name: kenburns-soft; }
+  .hero-slide.active video { transform: none; }
+  .wide-slide .slide-media { top: 68px; bottom: auto; height: 82vw; max-height: 56svh; }
+  .wide-slide .slide-media img, .wide-slide .slide-media video { object-position: center 30% !important; }
+  .wide-slide.slide-smiles img, .wide-slide .slide-smiles video { object-position: 46% 30% !important; }
+  .wide-slide .slide-media::after { background: linear-gradient(180deg, rgba(11,10,8,0.35) 0%, rgba(11,10,8,0) 18%, rgba(11,10,8,0) 72%, var(--ink) 100%); }
+  .wide-slide .slide-copy, .center-slide.wide-slide .slide-copy { justify-content: flex-start; padding-top: calc(68px + min(82vw, 56svh) + 22px); padding-bottom: 84px; }
+}
+@keyframes kenburns-soft { from { transform: scale(1.05); } to { transform: scale(1); } }
+
+/* Phones: inner-page banner photo shown as a 3:2 frame above the heading
+   instead of stretched behind the whole text block */
+@media (max-width: 640px) {
+  .page-hero { padding: calc(68px + 66vw + 28px) 0 64px; }
+  .page-hero .hero-media { top: 68px; bottom: auto; height: 66vw; }
+  .page-hero .hero-media img { animation: kenburns-soft 10s var(--ease) forwards; }
+  .page-hero::after { top: 68px; bottom: auto; height: calc(66vw + 2px); background: linear-gradient(180deg, rgba(11,10,8,0.3) 0%, rgba(11,10,8,0) 25%, rgba(11,10,8,0) 65%, var(--ink) 100%); }
+}
