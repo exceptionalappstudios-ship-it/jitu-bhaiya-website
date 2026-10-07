@@ -44,7 +44,7 @@ The build stops with an error if a page references an image that doesn't exist.
 - `assets/img/*.jpg`: Higgsfield-generated backgrounds
 - `assets/img/hero/slide-*.jpg`: the old site's slider photos, cropped to remove their baked-in text; `collage-200.jpg` fills the big "200"
 - `assets/img/hero/hero-*.jpg`: Higgsfield-generated hero scenes of Jitu Bhaiya, made from his real photos as reference
-- `assets/video/hero-smiles.webm` / `.mp4`: slide 1, the flower-greeting photo animated with Higgsfield and trimmed to start at 2.5s (plays once, holds the last frame)
+- `assets/video/hero-smiles.webm` / `.mp4`: slide 1, the flower-greeting photo animated with Higgsfield and trimmed to start at 2s (plays once, holds the last frame)
 - `assets/video/hero-stage.webm` / `.mp4`: slide 5, the 8-second stage video (WebM for every browser, H.264 MP4 as a fallback)
 - `assets/img/real/ack-*.jpg`: celebrity photos, upscaled to 2K with Higgsfield (ack-07 stayed at its original size because the upscale failed twice)
 
