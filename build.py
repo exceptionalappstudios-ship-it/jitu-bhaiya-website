@@ -54,6 +54,7 @@ NAV = [
     ("about", "about.html", "About"),
     ("programs", "programs.html", "Programs"),
     ("seva", "seva.html", "Seva"),
+    ("gallery", "gallery.html", "Gallery"),
     ("blog", "blog.html", "Journal"),
 ]
 
@@ -136,6 +137,7 @@ def footer(depth):
           <li><a href="{base}about.html">About Jitu Bhaiya</a></li>
           <li><a href="{base}programs.html">Programs</a></li>
           <li><a href="{base}seva.html">Seva &amp; Impact</a></li>
+          <li><a href="{base}gallery.html">Gallery</a></li>
           <li><a href="{base}blog.html">Journal</a></li>
           <li><a href="{base}contact.html">Contact</a></li>
         </ul>

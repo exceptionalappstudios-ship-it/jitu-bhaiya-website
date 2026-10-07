@@ -10,9 +10,10 @@ The text, numbers, testimonials, photos, programs, prices, press links and seva 
 
 | Page | File | What's on it |
 |---|---|---|
-| Home | `index.html` | Bio, real stats (200K+ / 100+ / 247+ / 500+), programs, "Acknowledged by" photo strip, client logos, real testimonials, Mitra Gadhvi video, seva highlights, press logos |
+| Home | `index.html` | Rotating hero (video + 4 scenes of Jitu Bhaiya), bio, stats, "Which program is right for you?" finder (12 programs with benefits, filterable by audience), celebrity gallery, signature talks, client logos, reviews wall + Mitra Gadhvi video, Intuition success stories, seva, press |
 | About | `about.html` | Story, expertise, Colors of Life, timeline, full press list |
 | Programs | `programs.html` | Happiness Program (with FAQs and videos), Online Workshop, Sahaj Samadhi, Youth Happiness, Intuition Process (with age tiers and prices), Utkarsha & Medha Yoga, Corporate, Stress Free Teaching, Volunteer Training, personal sessions |
+| Gallery | `gallery.html` | Upscaled photos with renowned personalities, programs and seva, with a full-screen viewer |
 | Seva | `seva.html` | #SevaTrend, Khushiyo Ka Tohfa, shoes, chhas, Share It Dil Se, floods and more |
 | Journal | `blog.html` + `blog/*.html` | 10 seva stories from the old site, plus 6 "Wisdom" articles |
 | Contact | `contact.html` | The form opens WhatsApp (+91 97246 23424) with the message already filled in |
@@ -41,8 +42,13 @@ The build stops with an error if a page references an image that doesn't exist.
 - `assets/img/real/`: photos from the current site, resized and compressed
 - `assets/img/logos/`: client, press and media logos
 - `assets/img/*.jpg`: Higgsfield-generated backgrounds
+- `assets/img/hero/`: Higgsfield-generated hero scenes of Jitu Bhaiya, made from his real photos as reference
+- `assets/video/hero-stage.webm` / `.mp4`: the 8-second hero video (WebM for every browser, H.264 MP4 as a fallback)
+- `assets/img/real/ack-*.jpg`: celebrity photos, upscaled to 2K with Higgsfield (ack-07 stayed at its original size because the upscale failed twice)
 
 ## Before going live: checklist
+
+- [ ] **AI-generated scenes of Jitu Bhaiya** (hero slides, hero video, About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
 
 - [ ] The 6 **"Wisdom" articles** (Sudarshan Kriya, Sahaj Samadhi, 5 Daily Rituals, What We Give, Bach Flower, NLP) are **new drafts written for this redesign**, not from the old site. Jitu Bhaiya should read and approve them, or they should be removed.
 - [ ] Confirm the second helpline number (+91 99985 69377). It comes from the September 2026 Happiness Program poster.

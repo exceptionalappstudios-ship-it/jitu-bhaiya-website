@@ -4,18 +4,40 @@ description: Jitendra Khimlani (Jitu Bhaiya) is a senior Art of Living faculty, 
 out: index.html
 nav: home
 -->
-<section class="hero">
-  <div class="hero-media"><img src="{{img:hero-stage}}" alt="" fetchpriority="high"></div>
+<section class="hero hero-slider">
+  <div class="hero-slides">
+    <div class="hero-slide active" data-caption="On stage — before thousands">
+      <video muted playsinline preload="auto" poster="{{img:hero/hero-stage-video-poster}}" aria-hidden="true"><source src="{{base}}assets/video/hero-stage.webm" type="video/webm"><source src="{{base}}assets/video/hero-stage.mp4" type="video/mp4"></video>
+    </div>
+    <div class="hero-slide" data-caption="In stillness — the art of meditation"><img src="{{img:hero/hero-palace}}" alt="Jitendra Khimlani meditating on a palace terrace at sunrise"></div>
+    <div class="hero-slide" data-caption="In celebration — Team Happiness"><img src="{{img:hero/hero-celebration}}" alt="Jitendra Khimlani celebrating with a vast crowd at dusk" loading="lazy"></div>
+    <div class="hero-slide" data-caption="In service — #SevaTrend"><img src="{{img:hero/hero-seva}}" alt="Jitendra Khimlani handing a Diwali gift to a child in a village" loading="lazy"></div>
+    <div class="hero-slide" data-caption="Mentor to two lakh lives"><img src="{{img:hero/hero-portrait}}" alt="Portrait of Jitendra Khimlani" loading="lazy"></div>
+  </div>
   <div class="wrap">
     <span class="eyebrow reveal">Jitendra Khimlani · Jitu Bhaiya</span>
+    <span class="hero-caption reveal d1" aria-live="polite"><span>On stage — before thousands</span></span>
     <h1 class="reveal d1">Helping souls reach their <em class="gold-text">fullest potential.</em></h1>
-    <p class="lead reveal d2">Senior Art of Living faculty, motivational speaker, NLP trainer, Bach remedy therapist, intuition trainer and life transformation coach. More than 2,00,000 people have attended his workshops, sessions and seminars.</p>
+    <p class="lead reveal d2">Senior Art of Living faculty, motivational speaker, NLP trainer, Bach remedy therapist, intuition trainer and life transformation coach.</p>
     <div class="hero-actions reveal d3">
-      <a class="btn btn-gold" href="programs.html">Explore Programs <span class="arrow">→</span></a>
-      <a class="btn" href="{{wa:Hi, I would like to know about the upcoming programs}}" target="_blank" rel="noopener">Join an Upcoming Course <span class="arrow">→</span></a>
+      <a class="btn btn-gold" href="#find-your-program">Find your program <span class="arrow">→</span></a>
+      <a class="btn" href="{{wa:Hi, I would like to know about the upcoming programs}}" target="_blank" rel="noopener">Join an upcoming course <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-badges reveal d3">
+      <div><strong>2,00,000+</strong>Lives touched</div>
+      <div><strong>500+</strong>Events organised</div>
+      <div><strong>12+ yrs</strong>Of transformation</div>
     </div>
   </div>
-  <div class="hero-scroll">Scroll</div>
+  <div class="hero-nav" aria-label="Hero slides">
+    <div class="wrap">
+      <button class="active" aria-label="Slide 1: Speaker">01 Speaker</button>
+      <button aria-label="Slide 2: Meditation">02 Meditation</button>
+      <button aria-label="Slide 3: Celebration">03 Celebration</button>
+      <button aria-label="Slide 4: Seva">04 Seva</button>
+      <button aria-label="Slide 5: Mentor">05 Mentor</button>
+    </div>
+  </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
@@ -62,71 +84,189 @@ nav: home
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="find-your-program">
   <div class="wrap">
-    <div class="section-head split">
-      <div>
-        <span class="eyebrow reveal">Programs</span>
-        <h2 class="reveal d1">Experiences that <em>transform</em> from within.</h2>
-      </div>
-      <p class="lead reveal d2">Art of Living programs for every age — from five-year-olds discovering their intuition to leaders building calmer, sharper teams.</p>
+    <div class="section-head center">
+      <span class="eyebrow reveal">Programs</span>
+      <h2 class="reveal d1">Which program is <em>right for you?</em></h2>
+      <p class="lead reveal d2">Choose who it's for — and see exactly what each program gives you.</p>
     </div>
-    <div class="programs-grid">
-      <a class="program-card reveal" href="programs.html#happiness">
-        <img src="{{img:real/happiness-5}}" alt="Happiness Program participants with Jitendra Khimlani" loading="lazy">
-        <div class="program-card-body">
-          <span class="program-num">01 · Ages 18+</span>
+    <div class="finder-tabs reveal d2" role="tablist">
+      <button class="active" data-aud="all">All programs</button>
+      <button data-aud="adults">Adults</button>
+      <button data-aud="youth">Youth &amp; students</button>
+      <button data-aud="kids">Children &amp; teens</button>
+      <button data-aud="org">Organisations</button>
+      <button data-aud="schools">Schools &amp; teachers</button>
+      <button data-aud="online">Online</button>
+      <button data-aud="personal">One-on-one</button>
+    </div>
+    <div class="finder-grid">
+      <article class="pcard reveal" data-aud="adults youth">
+        <div class="pcard-media"><img src="{{img:real/happiness-5}}" alt="Happiness Program session" loading="lazy"><span class="tag">Flagship · 4 days</span></div>
+        <div class="pcard-body">
           <h3>Happiness Program</h3>
-          <p>Learn Sudarshan Kriya™ to eliminate stress and anxiety, boost energy and unlock inner peace.</p>
-          <span class="link-arrow">Discover <span>→</span></span>
+          <div class="who">For anyone 18+ · In-person, Vadodara</div>
+          <ul>
+            <li>Deep relaxation in minutes with Sudarshan Kriya™</li>
+            <li>Natural energy — without caffeine</li>
+            <li>Quieter mind, stronger self-confidence</li>
+            <li>Better sleep, calmer under pressure</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Happiness program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#happiness">Details <span>→</span></a></div>
         </div>
-      </a>
-      <a class="program-card reveal d1" href="programs.html#sahaj">
-        <img src="{{img:real/sahaj-1}}" alt="Sahaj Samadhi Meditation session" loading="lazy">
-        <div class="program-card-body">
-          <span class="program-num">02 · Meditation</span>
+      </article>
+      <article class="pcard reveal d1" data-aud="adults online">
+        <div class="pcard-media"><img src="{{img:real/jitu-online}}" alt="Online session" loading="lazy"><span class="tag">From home</span></div>
+        <div class="pcard-body">
+          <h3>Online Breath &amp; Meditation</h3>
+          <div class="who">For adults anywhere · Online</div>
+          <ul>
+            <li>Calm the mind and bring daily peace and joy</li>
+            <li>Overcome fatigue and boost energy</li>
+            <li>Research-backed stress and anxiety relief</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Online Happiness program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#online">Details <span>→</span></a></div>
+        </div>
+      </article>
+      <article class="pcard reveal d2" data-aud="adults youth">
+        <div class="pcard-media"><img src="{{img:real/sahaj-1}}" alt="Sahaj Samadhi Meditation" loading="lazy"><span class="tag">Meditation</span></div>
+        <div class="pcard-body">
           <h3>Sahaj Samadhi Meditation</h3>
-          <p>Effortless mantra meditation that calms the brain into a soothing alpha state for deep rest.</p>
-          <span class="link-arrow">Discover <span>→</span></span>
+          <div class="who">For anyone who wants effortless meditation</div>
+          <ul>
+            <li>Enhanced peace of mind</li>
+            <li>Increased mental clarity and focus</li>
+            <li>Improved physical health</li>
+            <li>Unlocked intuitive skills</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Sahaj program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#sahaj">Details <span>→</span></a></div>
         </div>
-      </a>
-      <a class="program-card reveal d2" href="programs.html#youth">
-        <img src="{{img:real/youth-1}}" alt="Youth Happiness Program session" loading="lazy">
-        <div class="program-card-body">
-          <span class="program-num">03 · Youth</span>
+      </article>
+      <article class="pcard reveal" data-aud="youth">
+        <div class="pcard-media"><img src="{{img:real/youth-1}}" alt="Youth Happiness Program" loading="lazy"><span class="tag">Youth</span></div>
+        <div class="pcard-body">
           <h3>Youth Happiness Program</h3>
-          <p>The secret of happiness is in your breath — energy, focus and confidence for young people.</p>
-          <span class="link-arrow">Discover <span>→</span></span>
+          <div class="who">For students &amp; young adults</div>
+          <ul>
+            <li>Energy, focus and confidence</li>
+            <li>Relief from exam, career and peer stress</li>
+            <li>Wisdom to handle life's ups and downs</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Youth Happiness program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#youth">Details <span>→</span></a></div>
         </div>
-      </a>
-      <a class="program-card reveal" href="programs.html#intuition">
-        <img src="{{img:real/intuition-1}}" alt="Child doing a blindfold activity in the Intuition Process" loading="lazy">
-        <div class="program-card-body">
-          <span class="program-num">04 · Ages 5–18</span>
+      </article>
+      <article class="pcard reveal d1" data-aud="kids">
+        <div class="pcard-media"><img src="{{img:real/intuition-1}}" alt="Intuition Process activity" loading="lazy"><span class="tag">Ages 5–18 · 4 days</span></div>
+        <div class="pcard-body">
           <h3>Intuition Process</h3>
-          <p>Help your child activate their sixth sense — calm mind, clear decisions, natural confidence.</p>
-          <span class="link-arrow">Discover <span>→</span></span>
+          <div class="who">For children &amp; teens · ₹5,400 – ₹12,000*</div>
+          <ul>
+            <li>Activates the sixth sense — calm, clear decisions</li>
+            <li>Sharper learning and memory</li>
+            <li>Wisdom and maturity in relationships</li>
+            <li>Natural confidence, through games and fun</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the intuition program}}" target="_blank" rel="noopener">Free demo</a><a class="link-arrow" href="programs.html#intuition">Details <span>→</span></a></div>
         </div>
-      </a>
-      <a class="program-card reveal d1" href="programs.html#kids">
-        <img src="{{img:real/kids-2}}" alt="Children at an Utkarsha Yoga camp" loading="lazy">
-        <div class="program-card-body">
-          <span class="program-num">05 · Ages 8–18</span>
-          <h3>Utkarsha &amp; Medha Yoga</h3>
-          <p>Breathing, wisdom and Sudarshan Kriya™ to help children and teens conquer fear, anxiety and anger.</p>
-          <span class="link-arrow">Discover <span>→</span></span>
+      </article>
+      <article class="pcard reveal d2" data-aud="kids">
+        <div class="pcard-media"><img src="{{img:real/kids-2}}" alt="Utkarsha Yoga children" loading="lazy"><span class="tag">Ages 8–13</span></div>
+        <div class="pcard-body">
+          <h3>Utkarsha Yoga</h3>
+          <div class="who">For children · Art Excel</div>
+          <ul>
+            <li>Conquer fear, anxiety and anger</li>
+            <li>Better memory and concentration</li>
+            <li>Self-confidence and creativity</li>
+            <li>Teamwork and leadership qualities</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Utkarsha program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#kids">Details <span>→</span></a></div>
         </div>
-      </a>
-      <a class="program-card reveal d2" href="programs.html#corporate">
-        <img src="{{img:real/corporate-1}}" alt="Corporate program session" loading="lazy">
-        <div class="program-card-body">
-          <span class="program-num">06 · Organisations</span>
+      </article>
+      <article class="pcard reveal" data-aud="kids youth">
+        <div class="pcard-media"><img src="{{img:real/kids-4}}" alt="Teens at Medha Yoga" loading="lazy"><span class="tag">Ages 13–18</span></div>
+        <div class="pcard-body">
+          <h3>Medha Yoga</h3>
+          <div class="who">For teens · YES! Course</div>
+          <ul>
+            <li>Manage stress and negative emotions</li>
+            <li>Overcome nervousness and stage fear</li>
+            <li>Better decisions with Sudarshan Kriya™</li>
+            <li>69% fewer emotional problems (research)</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Medha program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#kids">Details <span>→</span></a></div>
+        </div>
+      </article>
+      <article class="pcard reveal d1" data-aud="org">
+        <div class="pcard-media"><img src="{{img:real/corporate-1}}" alt="Corporate program" loading="lazy"><span class="tag">Online &amp; offline</span></div>
+        <div class="pcard-body">
           <h3>Corporate Program</h3>
-          <p>Inspirational leadership, innovation, emotional intelligence and stronger teams.</p>
-          <span class="link-arrow">Discover <span>→</span></span>
+          <div class="who">For companies, teams &amp; leaders</div>
+          <ul>
+            <li>Inspirational leadership skills</li>
+            <li>Higher innovation and productivity</li>
+            <li>Emotional intelligence and communication</li>
+            <li>Stronger, more connected teams</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Corporate program}}" target="_blank" rel="noopener">Request a session</a><a class="link-arrow" href="programs.html#corporate">Details <span>→</span></a></div>
         </div>
-      </a>
+      </article>
+      <article class="pcard reveal d2" data-aud="schools org">
+        <div class="pcard-media"><img src="{{img:real/teachers-1}}" alt="Stress Free Teaching seminar" loading="lazy"><span class="tag">1-hour session</span></div>
+        <div class="pcard-body">
+          <h3>Stress Free Teaching</h3>
+          <div class="who">For school teachers</div>
+          <ul>
+            <li>Find and fix the root cause of teacher stress</li>
+            <li>Quick exercises and breathing techniques</li>
+            <li>Tips to bring out the best in children</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the Stress-Free Semainar}}" target="_blank" rel="noopener">Book for your school</a><a class="link-arrow" href="programs.html#teachers">Details <span>→</span></a></div>
+        </div>
+      </article>
+      <article class="pcard reveal" data-aud="adults youth">
+        <div class="pcard-media"><img src="{{img:real/vtp-1}}" alt="Volunteer Training Program group" loading="lazy"><span class="tag">Leadership</span></div>
+        <div class="pcard-body">
+          <h3>Volunteer Training Program</h3>
+          <div class="who">For those ready to lead and serve</div>
+          <ul>
+            <li>Leadership and communication skills</li>
+            <li>Qualify to teach breathing exercises</li>
+            <li>Learn to lead a guided meditation</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to know more about the VTP program}}" target="_blank" rel="noopener">Enquire</a><a class="link-arrow" href="programs.html#vtp">Details <span>→</span></a></div>
+        </div>
+      </article>
+      <article class="pcard reveal d1" data-aud="personal adults">
+        <div class="pcard-media"><img src="{{img:bach-remedy}}" alt="Bach flower remedies" loading="lazy"><span class="tag">One-on-one</span></div>
+        <div class="pcard-body">
+          <h3>Personal Sessions</h3>
+          <div class="who">Bach flower therapy · NLP · life coaching</div>
+          <ul>
+            <li>Gentle emotional healing</li>
+            <li>Freedom from fear, worry and anger</li>
+            <li>Clarity and confidence for big decisions</li>
+            <li>Branding guidance for entrepreneurs</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to book a personal session with Jitu Bhaiya}}" target="_blank" rel="noopener">Book a session</a><a class="link-arrow" href="programs.html#bach">Details <span>→</span></a></div>
+        </div>
+      </article>
+      <article class="pcard reveal d2" data-aud="org schools youth">
+        <div class="pcard-media"><img src="{{img:real/jitu-stage-corporate}}" alt="Jitendra Khimlani speaking on stage" loading="lazy"><span class="tag">Keynote</span></div>
+        <div class="pcard-body">
+          <h3>Invite Jitu Bhaiya to Speak</h3>
+          <div class="who">Universities · companies · Police, Army &amp; NDRF</div>
+          <ul>
+            <li>High-energy, interactive seminars</li>
+            <li>Stress management and happiness at work</li>
+            <li>Youth confidence, clarity and purpose</li>
+          </ul>
+          <div class="pcard-actions"><a class="btn btn-gold" href="{{wa:Hi, I would like to invite Jitu Bhaiya for a seminar/workshop}}" target="_blank" rel="noopener">Invite</a><a class="link-arrow" href="#talks">Talk topics <span>→</span></a></div>
+        </div>
+      </article>
     </div>
+    <p class="fine center reveal" style="margin-top:30px">* Intuition Process contribution varies by age group and location.</p>
   </div>
 </section>
 
@@ -139,41 +279,54 @@ nav: home
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="gallery">
   <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow reveal">Acknowledged by</span>
-      <h2 class="reveal d1">Renowned <em>personalities.</em></h2>
+    <div class="section-head split">
+      <div>
+        <span class="eyebrow reveal">Acknowledged by</span>
+        <h2 class="reveal d1">Moments with <em>renowned personalities.</em></h2>
+      </div>
+      <div class="reveal d2">
+        <p class="lead" style="margin-bottom:24px">Spiritual leaders, national leaders and celebrated artists — moments from a life of service.</p>
+        <a class="link-arrow" href="gallery.html">View full gallery <span>→</span></a>
+      </div>
+    </div>
+    <div class="celeb-grid reveal d1">
+      <a href="{{img:real/ack-02}}" data-lightbox><img src="{{img:real/ack-02}}" alt="Jitendra Khimlani with Gurudev Sri Sri Ravi Shankar" loading="lazy"></a>
+      <a href="{{img:real/ack-04}}" data-lightbox><img src="{{img:real/ack-04}}" alt="Jitendra Khimlani with a national leader" loading="lazy"></a>
+      <a href="{{img:real/ack-03}}" data-lightbox><img src="{{img:real/ack-03}}" alt="Jitendra Khimlani with Gurudev Sri Sri Ravi Shankar" loading="lazy"></a>
+      <a href="{{img:real/ack-01}}" data-lightbox><img src="{{img:real/ack-01}}" alt="Jitendra Khimlani with a distinguished guest" loading="lazy" style="object-position:30% center"></a>
+      <a href="{{img:real/ack-07}}" data-lightbox><img src="{{img:real/ack-07}}" alt="Jitendra Khimlani with a celebrated artist" loading="lazy"></a>
+      <a href="{{img:real/ack-06}}" data-lightbox><img src="{{img:real/ack-06}}" alt="Jitendra Khimlani with a spiritual leader" loading="lazy"></a>
+      <a href="{{img:real/ack-05}}" data-lightbox><img src="{{img:real/ack-05}}" alt="Jitendra Khimlani with spiritual leaders" loading="lazy"></a>
+      <a href="{{img:real/ack-11}}" data-lightbox><img src="{{img:real/ack-11}}" alt="Jitendra Khimlani greeting a spiritual leader" loading="lazy"></a>
+      <a href="{{img:real/ack-17}}" data-lightbox><img src="{{img:real/ack-17}}" alt="Jitendra Khimlani with a distinguished guest" loading="lazy"></a>
+      <a href="{{img:real/ack-09}}" data-lightbox><img src="{{img:real/ack-09}}" alt="Jitendra Khimlani with distinguished guests" loading="lazy"></a>
+      <a href="{{img:real/ack-12}}" data-lightbox><img src="{{img:real/ack-12}}" alt="Jitendra Khimlani with a spiritual leader" loading="lazy"></a>
+      <a href="{{img:real/ack-08}}" data-lightbox><img src="{{img:real/ack-08}}" alt="Jitendra Khimlani with distinguished guests" loading="lazy"></a>
     </div>
   </div>
-  <div class="photo-strip reveal d2">
-    <div class="photo-strip-track">
-      <figure><img src="{{img:real/ack-01}}" alt="Jitendra Khimlani with a distinguished guest" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-02}}" alt="Jitendra Khimlani with Gurudev Sri Sri Ravi Shankar" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-03}}" alt="Jitendra Khimlani with Gurudev Sri Sri Ravi Shankar" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-04}}" alt="Jitendra Khimlani with a distinguished guest" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-05}}" alt="Jitendra Khimlani with spiritual leaders" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-06}}" alt="Jitendra Khimlani with a spiritual leader" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-07}}" alt="Jitendra Khimlani with a distinguished guest" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-08}}" alt="Jitendra Khimlani with distinguished guests" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-09}}" alt="Jitendra Khimlani with distinguished guests" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-10}}" alt="Jitendra Khimlani at a celebration with guests" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-11}}" alt="Jitendra Khimlani greeting a spiritual leader" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-12}}" alt="Jitendra Khimlani with a spiritual leader" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-17}}" alt="Jitendra Khimlani with a distinguished guest" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-01}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-02}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-03}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-04}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-05}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-06}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-07}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-08}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-09}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-10}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-11}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-12}}" alt="" loading="lazy"></figure>
-      <figure><img src="{{img:real/ack-17}}" alt="" loading="lazy"></figure>
+</section>
+
+<section class="section bg-ink-2" id="talks">
+  <div class="wrap">
+    <div class="section-head split">
+      <div>
+        <span class="eyebrow reveal">Signature talks</span>
+        <h2 class="reveal d1">Bring the energy to <em>your stage.</em></h2>
+      </div>
+      <div class="reveal d2">
+        <p class="lead" style="margin-bottom:24px">Seminars at universities, institutes, companies and with the Police, the Army and the NDRF.</p>
+        <a class="btn btn-gold" href="{{wa:Hi, I would like to invite Jitu Bhaiya for a seminar/workshop}}" target="_blank" rel="noopener">Invite Jitu Bhaiya <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="talks">
+      <div class="talk reveal"><span class="n">01</span><h3>The Secret of Happiness Is in Your Breath</h3><p>How simple breathing techniques dissolve stress and unlock energy — with a live practice the whole audience feels.</p><span class="aud">Everyone</span></div>
+      <div class="talk reveal d1"><span class="n">02</span><h3>Stress-Free High Performance</h3><p>Calm minds make better leaders: resilience, emotional intelligence and focus for teams under pressure.</p><span class="aud">Corporates · Police · Army</span></div>
+      <div class="talk reveal d2"><span class="n">03</span><h3>Confidence, Clarity &amp; Purpose</h3><p>Removing doubt and insecurity so young people can discover who they are and what they're here to do.</p><span class="aud">Universities · Youth</span></div>
+      <div class="talk reveal"><span class="n">04</span><h3>Intuition — The Sixth Sense</h3><p>Why every child has an intuitive mind, and how to nurture it for focus, learning and wiser choices.</p><span class="aud">Schools · Parents</span></div>
+      <div class="talk reveal d1"><span class="n">05</span><h3>What We Give Is What We Receive</h3><p>The #SevaTrend philosophy: how acts of kindness build self-esteem, community and lasting happiness.</p><span class="aud">Communities · CSR</span></div>
+      <div class="talk reveal d2"><span class="n">06</span><h3>Stress Free Teaching</h3><p>Root causes of teacher stress, quick relief techniques and practical ways to bring out the best in children.</p><span class="aud">Teachers</span></div>
     </div>
   </div>
 </section>
@@ -183,7 +336,6 @@ nav: home
     <div class="section-head center">
       <span class="eyebrow reveal">Trusted by</span>
       <h2 class="reveal d1">Institutions that <em>shape a nation.</em></h2>
-      <p class="lead reveal d2">Workshops and seminars for universities, companies and government organisations — including the Police, the Army and the NDRF.</p>
     </div>
     <div class="logo-row reveal d2">
       <div class="logo-tile"><img src="{{img:logos/army.png}}" alt="Indian Army" loading="lazy"></div>
@@ -195,54 +347,60 @@ nav: home
   </div>
 </section>
 
-<section class="section bg-ink-2 testimonials">
+<section class="section bg-ink-2" id="reviews">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow reveal">What people are saying</span>
-      <h2 class="reveal d1">Real people. <em>Real change.</em></h2>
+      <span class="eyebrow reveal">Reviews</span>
+      <h2 class="reveal d1">What people say about <em>Jitu Bhaiya.</em></h2>
     </div>
-    <div class="t-slider reveal d2">
-      <div class="t-slide">
-        <p class="long">“I may fall short of words to express my gratitude to Mr. Jitendra Khimlani. Never thought I would be able to overcome my major emotional issues… He listened to everything with lots of patience. He advised me Bach remedy that helped me to know myself better and it worked wonders for me.”</p>
-        <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-monika}}" alt="" loading="lazy"></div><div><div class="t-name">Monika</div><div class="t-role">Bach Flower Therapy</div></div></div>
-      </div>
-      <div class="t-slide">
-        <p class="long">“Jitendra Khimlani is hands down the best at what he does. He has played such a huge role in shaping who I am today. I used to worry a lot… 5 sessions and 6 months later I can't even believe how everything turned around so fast! I've found new passion for living.”</p>
+    <div class="rating-band reveal d1">
+      <span><strong>★★★★★</strong>From participants &amp; clients</span>
+      <span><strong>2L+</strong>Lives touched</span>
+    </div>
+    <div class="review-wall">
+      <div class="review featured reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Jitendra Khimlani is hands down the best at what he does. He has played such a huge role in shaping who I am today. I used to worry a lot — it had gone to a level where I became angry and frustrated at small things and had almost lost all hope. Then I started taking Bach flower remedy. Five sessions and six months later I can't believe how fast everything turned around! I've found a new passion for living. It's almost like I'm a totally different person. I trade regularly, and it has helped me tremendously in managing emotions like greed, FOMO and fear. Eternally grateful to have found you.”</p>
         <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-shivam}}" alt="" loading="lazy"></div><div><div class="t-name">Shivam S.</div><div class="t-role">Business Consultation</div></div></div>
       </div>
-      <div class="t-slide">
-        <p class="long">“If you really want to know about Jitendra Khimlani and Bach therapy in one single line — it's a Booster. He truly wants everyone to perform their best in life. Whatever I am now, his contribution plays a very important role. Thank you for everything you do for me and for society.”</p>
-        <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-mitul}}" alt="" loading="lazy"></div><div><div class="t-name">Mitul Shah</div><div class="t-role">Bach Flower Therapy</div></div></div>
-      </div>
-      <div class="t-slide">
-        <p class="long">“I am so grateful to Bewise Global and Jitubhaiya for the amazing oil and Bach remedy. The Bach remedy helped me boost my confidence, remove my fear issues and much more — emotionally and health-wise.”</p>
-        <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-dhaval}}" alt="" loading="lazy"></div><div><div class="t-name">Dhaval Gohil</div><div class="t-role">Happiness Program</div></div></div>
-      </div>
-    </div>
-    <div class="t-dots"></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <span class="eyebrow reveal">In their words</span>
-        <h2 class="reveal d1">Mitra Gadhvi shares <em>his experience.</em></h2>
-        <p class="lead reveal d2">Actor Mitra Gadhvi on what the Art of Living Happiness Program changed for him.</p>
-        <a class="btn reveal d3" href="programs.html#happiness">About the Happiness Program <span class="arrow">→</span></a>
-      </div>
-      <div class="reveal d1">
+      <div class="review-video reveal d1">
         <div class="video" data-yt="cq-fuuX4hH0" role="button" tabindex="0" aria-label="Play: Mitra Gadhvi's experience of the Happiness Program">
           <img src="https://i.ytimg.com/vi/cq-fuuX4hH0/hqdefault.jpg" alt="" loading="lazy">
           <span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
         </div>
+        <div class="video-caption">Actor Mitra Gadhvi shares his experience of the Happiness Program</div>
       </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>“I am so grateful to Bewise Global and Jitubhaiya for the amazing oil and Bach remedy. The Bach remedy helped me boost my confidence, remove my fear issues and much more — emotionally and health-wise.”</p>
+        <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-dhaval}}" alt="" loading="lazy"></div><div><div class="t-name">Dhaval Gohil</div><div class="t-role">Happiness Program</div></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>“I may fall short of words to express my gratitude to Mr. Jitendra Khimlani. I never thought I would be able to overcome my major emotional issues. The first time I went for his consultancy, I shared my major personal setbacks and he listened to everything with lots of patience. With his bang-on intuitive abilities, I was saved from a lot of unwanted troubles. He advised me Bach remedy, which helped me know myself better — it worked wonders. Later he suggested aromatherapy, which brought out the best of me. I uncovered skills I didn't know I had.”</p>
+        <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-monika}}" alt="" loading="lazy"></div><div><div class="t-name">Monika</div><div class="t-role">Bach Flower Therapy</div></div></div>
+      </div>
+      <div class="review reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>“If you really want to know about Jitendra Khimlani and Bach therapy in one single line — it's a Booster. You can't imagine how good you start feeling. He truly wants everyone to perform their best in life. Personally, whatever I am now, his contribution plays a very important role. He always charges my energy. Thank you for everything you do for me and for society.”</p>
+        <div class="t-person"><div class="t-avatar photo"><img src="{{img:real/t-mitul}}" alt="" loading="lazy"></div><div><div class="t-name">Mitul Shah</div><div class="t-role">Bach Flower Therapy</div></div></div>
+      </div>
+    </div>
+
+    <div class="section-head center" style="margin:90px 0 50px">
+      <span class="eyebrow reveal">Intuition Process</span>
+      <h2 class="reveal d1">Stories that <em>inspire.</em></h2>
+    </div>
+    <div class="stories">
+      <div class="story-card reveal"><img src="{{img:real/story-divyakriti}}" alt="Divyakriti Singh Rathore with her horse" loading="lazy"><div><h4>Divyakriti Singh Rathore</h4><span class="role">Asian Games 2023 gold medallist</span><p>“The Intuition Process helped me understand my teammate — my horse — inside and out. I can sense how my horse feels, which enhances our performance together.”</p></div></div>
+      <div class="story-card reveal d1"><img src="{{img:real/story-swastik}}" alt="Swastik" loading="lazy"><div><h4>Swastik</h4><span class="role">Guinness World Record holder</span><p>“I had a really bad memory. After practising for 90 days I saw a huge shift — my memory got 10X better. Now I can remember anything, in any order, instantly.”</p></div></div>
+      <div class="story-card reveal d2"><img src="{{img:real/story-param}}" alt="Param Prabhani" loading="lazy"><div><h4>Param Prabhani</h4><span class="role">Triumphed over attention deficit</span><p>“Growing up with autism, I struggled with focus and emotional balance. The Intuition Process enhanced my focus, optimism, resilience and self-awareness.”</p></div></div>
+      <div class="story-card reveal d3"><img src="{{img:real/story-pranav}}" alt="Pranav Kalra" loading="lazy"><div><h4>Pranav Kalra</h4><span class="role">Intuition Program graduate</span><p>“I could remember more and my SAT score improved. Meditation de-stressed me during my college application process.”</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="section bg-ink-2">
+<section class="section">
   <div class="wrap">
     <div class="impact-card reveal">
       <img src="{{img:real/seva-dediapada-2}}" alt="Children in Dediapada receiving Diwali goodie bags" loading="lazy">
@@ -277,7 +435,7 @@ nav: home
   </div>
 </section>
 
-<section class="section">
+<section class="section bg-ink-2">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow reveal">As featured on</span>
@@ -298,7 +456,7 @@ nav: home
 </section>
 
 <section class="cta-band">
-  <div class="hero-media"><img src="{{img:hero-stage}}" alt="" loading="lazy"></div>
+  <div class="hero-media"><img src="{{img:hero/hero-celebration}}" alt="" loading="lazy" style="object-position:70% center"></div>
   <div class="wrap">
     <span class="eyebrow reveal">Join an upcoming course</span>
     <h2 class="reveal d1">Your transformation is <em class="gold-text">one breath away.</em></h2>
