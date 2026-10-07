@@ -1545,3 +1545,12 @@ a.video:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .tier { display: flex; flex-direction: column; }
 .tier p { flex: 1; margin-bottom: 24px; }
 .tier .tier-btn { align-self: flex-start; padding: 14px 24px; font-size: 0.68rem; }
+
+/* Brand: smaller JK mark, bolder name */
+.brand { gap: 18px; }
+.brand-mark { width: 34px; height: 34px; font-size: 0.9rem; }
+.brand-name { font-weight: 600; letter-spacing: 0.01em; }
+.brand-name small { font-weight: 600; }
+@media (max-width: 640px) {
+  .brand-mark { width: 30px; height: 30px; font-size: 0.8rem; }
+}
