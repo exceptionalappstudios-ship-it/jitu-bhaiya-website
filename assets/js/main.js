@@ -241,17 +241,33 @@
   });
 
   // Forms: open WhatsApp with the message pre-filled (no backend needed)
+  // Forms: a real link to WhatsApp, kept up to date with the form's contents.
+  // (A real link opens reliably everywhere; script-opened windows can be blocked.)
   document.querySelectorAll("form[data-whatsapp]").forEach(function (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var number = form.getAttribute("data-whatsapp");
+    var number = form.getAttribute("data-whatsapp");
+    var link = form.querySelector(".wa-send");
+    function buildHref() {
       var lines = [];
       form.querySelectorAll("input, select, textarea").forEach(function (f) {
-        if (f.name && f.value) lines.push(f.name + ": " + f.value);
+        if (f.name && f.value && !f.closest("[hidden]")) lines.push(f.name + ": " + f.value);
       });
-      var text = encodeURIComponent("Hello Jitu Bhaiya,\n\n" + lines.join("\n"));
-      window.open("https://wa.me/" + number + "?text=" + text, "_blank", "noopener");
+      return "https://wa.me/" + number + "?text=" + encodeURIComponent("Hello Jitu Bhaiya,\n\n" + lines.join("\n"));
+    }
+    function refresh() { if (link) link.href = buildHref(); }
+    form.addEventListener("input", refresh);
+    form.addEventListener("change", refresh);
+    if (link) {
+      link.addEventListener("click", function (e) {
+        refresh();
+        if (!form.checkValidity()) { e.preventDefault(); form.reportValidity(); }
+      });
+    }
+    // Pressing Enter in a field behaves like clicking the link
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (link && form.reportValidity()) link.click();
     });
+    refresh();
   });
 
   // Preselect the program from ?program= links
