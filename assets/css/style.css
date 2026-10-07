@@ -1541,3 +1541,7 @@ cite {
 
 a.video { display: block; }
 a.video:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+.tier { display: flex; flex-direction: column; }
+.tier p { flex: 1; margin-bottom: 24px; }
+.tier .tier-btn { align-self: flex-start; padding: 14px 24px; font-size: 0.68rem; }

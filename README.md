@@ -12,7 +12,7 @@ The text, numbers, testimonials, photos, programs, prices, press links and seva 
 |---|---|---|
 | Home | `index.html` | 7-slide hero, each with its own headline and buttons: the 4 slides from the old site recreated (Spreading smiles, 200 thousand lives, Intuition highlight, Transform your mind) plus a real stage photo and 2 generated scenes (meditation, seva); bio, stats, "Which program is right for you?" finder (12 programs with benefits, filterable by audience), celebrity gallery, signature talks, client logos, reviews wall + Mitra Gadhvi video, Intuition success stories, seva, press |
 | About | `about.html` | Story, expertise, Colors of Life, timeline, full press list |
-| Programs | `programs.html` | Happiness Program (with FAQs and videos), Online Workshop, Sahaj Samadhi, Youth Happiness, Intuition Process (with age tiers and prices), Utkarsha & Medha Yoga, Corporate, Stress Free Teaching, Volunteer Training, personal sessions |
+| Programs | `programs.html` | Happiness Program (with FAQs and videos), Online Workshop, Sahaj Samadhi, Youth Happiness, Intuition Process (with age groups and Enquire buttons), Utkarsha & Medha Yoga, Corporate, Stress Free Teaching, Volunteer Training, personal sessions |
 | Gallery | `gallery.html` | Upscaled photos with renowned personalities, programs and seva, with a full-screen viewer |
 | Seva | `seva.html` | #SevaTrend, Khushiyo Ka Tohfa, shoes, chhas, Share It Dil Se, floods and more |
 | Journal | `blog.html` + `blog/*.html` | 10 seva stories from the old site, plus 6 "Wisdom" articles |
