@@ -139,6 +139,32 @@
     var hIndex = 0;
     var hTimer;
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // On phones, make the hero tall enough for the longest slide so its
+    // buttons never run into the slide bar at the bottom.
+    var hBox = heroSlider.querySelector(".hero-slides");
+    function fitHero() {
+      var need = 0;
+      if (window.innerWidth <= 900) {
+        hSlides.forEach(function (s) {
+          var copy = s.querySelector(".slide-copy");
+          if (!copy) return;
+          var cs = getComputedStyle(copy);
+          var h = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+          Array.prototype.forEach.call(copy.children, function (ch) {
+            var m = getComputedStyle(ch);
+            h += ch.offsetHeight + parseFloat(m.marginTop) + parseFloat(m.marginBottom);
+          });
+          need = Math.max(need, h);
+        });
+      }
+      hBox.style.setProperty("--hero-need", Math.ceil(need) + "px");
+    }
+    fitHero();
+    window.addEventListener("resize", fitHero);
+    window.addEventListener("load", fitHero);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHero);
+
     function showSlide(i) {
       hSlides[hIndex].classList.remove("active");
       if (hButtons[hIndex]) hButtons[hIndex].classList.remove("active");

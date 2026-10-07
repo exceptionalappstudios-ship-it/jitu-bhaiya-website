@@ -1582,3 +1582,6 @@ h1 .h1-kicker { display: flex; width: fit-content; margin-bottom: 1.6rem; line-h
   .page-hero .hero-media img { animation: kenburns-soft 10s var(--ease) forwards; }
   .page-hero::after { top: 68px; bottom: auto; height: calc(66vw + 2px); background: linear-gradient(180deg, rgba(11,10,8,0.3) 0%, rgba(11,10,8,0) 25%, rgba(11,10,8,0) 65%, var(--ink) 100%); }
 }
+@media (max-width: 900px) {
+  .hero-slider .hero-slides { min-height: max(640px, var(--hero-need, 0px)); }
+}
