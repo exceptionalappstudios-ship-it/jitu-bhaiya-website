@@ -144,6 +144,9 @@
         if (p && p.catch) p.catch(function () {});
         dur = 8000;
       }
+      if (slide.hasAttribute("data-dur")) {
+        dur = parseInt(slide.getAttribute("data-dur"), 10) || dur;
+      }
       if (hButtons[hIndex]) {
         hButtons[hIndex].style.setProperty("--dur", dur + "ms");
         // restart the progress animation

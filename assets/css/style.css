@@ -1530,8 +1530,8 @@ cite {
 @media (max-width: 900px) {
   .center-slide .slide-copy { padding-bottom: 96px; }
 }
-.slide-smiles img { object-position: 30% 20%; }
+.slide-smiles img, .slide-smiles video { object-position: 38% 25%; }
 @media (max-width: 900px) {
-  .slide-smiles img { object-position: 34% 15%; }
+  .slide-smiles img, .slide-smiles video { object-position: 42% 20%; }
   .center-slide .slide-copy .eyebrow { display: none; }
 }

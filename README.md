@@ -44,12 +44,13 @@ The build stops with an error if a page references an image that doesn't exist.
 - `assets/img/*.jpg`: Higgsfield-generated backgrounds
 - `assets/img/hero/slide-*.jpg`: the old site's slider photos, cropped to remove their baked-in text; `collage-200.jpg` fills the big "200"
 - `assets/img/hero/hero-*.jpg`: Higgsfield-generated hero scenes of Jitu Bhaiya, made from his real photos as reference
-- `assets/video/hero-stage.webm` / `.mp4`: the 8-second hero video (WebM for every browser, H.264 MP4 as a fallback)
+- `assets/video/hero-smiles.webm` / `.mp4`: slide 1, the flower-greeting photo animated with Higgsfield and trimmed to start at 2.5s (plays once, holds the last frame)
+- `assets/video/hero-stage.webm` / `.mp4`: slide 5, the 8-second stage video (WebM for every browser, H.264 MP4 as a fallback)
 - `assets/img/real/ack-*.jpg`: celebrity photos, upscaled to 2K with Higgsfield (ack-07 stayed at its original size because the upscale failed twice)
 
 ## Before going live: checklist
 
-- [ ] **AI-generated scenes of Jitu Bhaiya** (hero slides 5–7, the hero video, the About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
+- [ ] **AI-generated scenes of Jitu Bhaiya** (the slide 1 flower animation, hero slides 5–7, the stage video, the About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
 - [ ] The 6 **"Wisdom" articles** (Sudarshan Kriya, Sahaj Samadhi, 5 Daily Rituals, What We Give, Bach Flower, NLP) are **new drafts written for this redesign**, not from the old site. Jitu Bhaiya should read and approve them, or they should be removed.
 - [ ] Confirm the second helpline number (+91 99985 69377). It comes from the September 2026 Happiness Program poster.
 - [ ] The "Join an upcoming course" sections point to WhatsApp because the 10–13 September 2026 batch has already passed. Add the next dates when they're known.
