@@ -137,7 +137,7 @@
       var slide = hSlides[hIndex];
       slide.classList.add("active");
       var video = slide.querySelector("video");
-      var dur = 7000;
+      var dur = 6500;
       if (video) {
         try { video.currentTime = 0; } catch (e) {}
         var p = video.play();
@@ -155,6 +155,17 @@
       if (!reduce) hTimer = setTimeout(function () { showSlide((hIndex + 1) % hSlides.length); }, dur);
     }
     hButtons.forEach(function (b, i) { b.addEventListener("click", function () { showSlide(i); }); });
+    var prevBtn = heroSlider.querySelector(".hero-arrow.prev"), nextBtn = heroSlider.querySelector(".hero-arrow.next");
+    if (prevBtn) prevBtn.addEventListener("click", function () { showSlide((hIndex - 1 + hSlides.length) % hSlides.length); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { showSlide((hIndex + 1) % hSlides.length); });
+    // swipe on touch screens
+    var touchX = null;
+    heroSlider.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+    heroSlider.addEventListener("touchend", function (e) {
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX; touchX = null;
+      if (Math.abs(dx) > 50) showSlide((hIndex + (dx < 0 ? 1 : -1) + hSlides.length) % hSlides.length);
+    }, { passive: true });
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) clearTimeout(hTimer); else showSlide(hIndex);
     });
