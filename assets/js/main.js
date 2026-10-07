@@ -5,10 +5,17 @@
   // position); back/forward still returns to where the visitor was.
   var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
   if (!location.hash && !(nav && nav.type === "back_forward")) {
-    window.scrollTo(0, 0);
-    if (window.self !== window.top) {
-      try { document.documentElement.scrollIntoView({ block: "start" }); } catch (e) {}
-    }
+    var toTop = function () {
+      window.scrollTo(0, 0);
+      if (window.self !== window.top) {
+        try { document.documentElement.scrollIntoView({ block: "start" }); } catch (e) {}
+      }
+    };
+    toTop();
+    // The preview frame can resize after load and keep its old position, so repeat once settled
+    window.addEventListener("load", function () {
+      if (window.scrollY < 200) { toTop(); setTimeout(function () { if (window.scrollY < 200) toTop(); }, 350); }
+    });
   }
 
   // Header state on scroll

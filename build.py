@@ -13,11 +13,14 @@ Each file in content/ starts with a small front-matter block:
 followed by the page body. The shared header, footer and <head> are added here,
 so edit them once in this file and run:  python3 build.py
 """
+import hashlib
 import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).parent
 CONTENT = ROOT / "content"
+# Short fingerprint of the CSS + JS, added to their URLs so browsers fetch fresh copies after each change
+ASSET_V = hashlib.md5(b"".join((ROOT / f).read_bytes() for f in ("assets/css/style.css", "assets/js/main.js"))).hexdigest()[:8]
 
 SITE = {
     "name": "Jitendra Khimlani",
@@ -180,7 +183,7 @@ def head(meta, out, depth, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}assets/css/style.css">
+<link rel="stylesheet" href="{base}assets/css/style.css?v={ASSET_V}">
 {json_ld(meta, out, meta["title"], description, image, body)}
 </head>
 <body>
@@ -277,7 +280,7 @@ def footer(depth):
   </div>
 </footer>
 <a class="float-cta" href="https://wa.me/{s['whatsapp']}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{ICONS['whatsapp']}</a>
-<script src="{base}assets/js/main.js"></script>
+<script src="{base}assets/js/main.js?v={ASSET_V}"></script>
 </body>
 </html>
 """
