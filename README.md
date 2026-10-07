@@ -6,7 +6,7 @@ It's a plain static site (HTML/CSS/JS), so it can be hosted for free on GitHub P
 
 ## Content
 
-The text, numbers, testimonials, photos, programs, prices, press links and seva stories all come from the current WordPress site. The only additions are the atmospheric images (stage, marble, still lifes) generated with Higgsfield.
+The text, numbers, testimonials, photos, programs, prices, press links and seva stories all come from the current WordPress site. The additions are images generated with Higgsfield: background images, plus hero scenes and a short hero video of Jitu Bhaiya made from his real photos. His celebrity photos were also upscaled with Higgsfield.
 
 | Page | File | What's on it |
 |---|---|---|
@@ -49,7 +49,6 @@ The build stops with an error if a page references an image that doesn't exist.
 ## Before going live: checklist
 
 - [ ] **AI-generated scenes of Jitu Bhaiya** (hero slides, hero video, About banner) were created from his real photos. He should see and approve them before launch, since they show him in places and outfits that aren't real photographs.
-
 - [ ] The 6 **"Wisdom" articles** (Sudarshan Kriya, Sahaj Samadhi, 5 Daily Rituals, What We Give, Bach Flower, NLP) are **new drafts written for this redesign**, not from the old site. Jitu Bhaiya should read and approve them, or they should be removed.
 - [ ] Confirm the second helpline number (+91 99985 69377). It comes from the September 2026 Happiness Program poster.
 - [ ] The "Join an upcoming course" sections point to WhatsApp because the 10–13 September 2026 batch has already passed. Add the next dates when they're known.
