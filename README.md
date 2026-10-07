@@ -69,4 +69,4 @@ The live domain is set in `SITE["url"]` (currently `https://jitendrakhimlani.com
 - [ ] The "Personal sessions" section (Bach flower therapy, aromatherapy, NLP coaching) is written from his bio and testimonials. Check the wording.
 - [ ] Replace the Google reviews link (`google_reviews` in `build.py`) with the exact link to his Google Business Profile reviews. It currently opens a Google Maps search for his business name.
 - [ ] The photos in "Acknowledged by renowned personalities" use generic alt text. Add the guests' names if you'd like them shown.
-- After launch: verify the domain in Google Search Console and submit `sitemap.xml`; keep the Google Business Profile linked to the site.
+- [ ] After launch, verify the domain in Google Search Console and submit `sitemap.xml`; keep the Google Business Profile linked to the site.
